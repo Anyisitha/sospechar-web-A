@@ -1,38 +1,24 @@
-.App {
-  text-align: center;
+.auth_main-container, .content_main-container {
+    /* border: 1px solid red; */
+    width: 100%;
+    min-height: 100vh;
+    
+    display: grid;
+    grid-template-columns: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.auth_main-container {
+    grid-template-rows: 1fr auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.content_main-container {
+    grid-template-rows: auto 1fr auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+.auth_main-container .auth_main-section {
+    background-image: url(./assets/images/pistas-fondo.png);
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 1fr;
 }

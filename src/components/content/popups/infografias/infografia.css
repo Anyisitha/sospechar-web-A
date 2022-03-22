@@ -1,0 +1,245 @@
+.infografiapop {
+    overflow-y: scroll;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 99;
+    background-color: #284251;
+
+    display: flex;
+    flex-direction: column;
+} 
+
+.lb-container .lb-header, .lb-container .lb-canvas {
+    background-color: #284251 !important;
+}
+
+.lb-container .lb-header {
+    box-shadow: none !important;
+    order: 2;
+}
+
+.lb-container {
+    z-index: 99;
+    position: relative !important;
+}
+
+.mobile-controls, .lb-icon-close, .lb-icon-reset {
+    display: none !important;
+}
+
+.infografiapop .infografiapop_header-section {
+    background-color: #284251;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.infografiapop_header-section .infografiapop_header-text {
+    /* border: 1px solid red; */
+    width: 80%;
+} 
+
+.infografiapop_header-text h4 {
+    width: fit-content;
+    padding: 3px;
+    color: #fff;
+    background-color: #990000;
+    font-size: 1.2em;
+    font-family: Helvetica;
+    font-weight: bold;
+}
+
+.infografiapop_header-text p {
+    color: #fff;
+    background-color: #565b6f;
+    font-size: 0.8em;
+    font-family: Helvetica;
+}
+
+.infografiapop_header-section .infografiapop_close-icon {
+    cursor: pointer;
+    width: 10%;
+}
+
+.infografiapop .infografiapop_btns-box {
+    position: absolute;
+    right: 3%;
+    bottom: 70px;
+    width: 11%;
+    z-index: 100;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.infografiapop_btns-box .infografiapop_icon {
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.infografiapop_btns-box .infografiapop_favorite-icon {
+    opacity: .5;
+    transition: 200ms all;
+}
+
+.infografiapop_btns-box .infografiapop_favorite-icon:hover {
+    opacity: 1 !important;
+}
+
+.infografiapop_btns-box .infografiapop_share-icon {
+    position: relative;
+}
+
+.infografiapop_share-icon .infografiapop_share-icons-box {
+    border-radius: 8px 0 0 8px;
+    position: absolute;
+    top: 50%;
+    right: 60%;
+    transform: translate(0, -50%);
+    width: 190px;
+    background-color: #c3d9cd;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 3px 5px;
+    z-index: -1;
+}
+
+.infografiapop_share-icons-box .close-share {
+    width: 5%;
+    margin-right: 10px;
+}
+
+.infografiapop_share-icons-box .share-icon {
+    width: 15%;
+    margin: 0 5px;
+}
+
+.infografiapop_share-icon .open-share {
+    z-index: 1;
+}
+
+@media screen and (min-width: 550px) {
+    .infografiapop .infografiapop_header-section {
+        padding: 10px 20px;
+    }
+
+    .infografiapop_header-text p {
+        font-size: 1.1em;
+    }
+
+    .infografiapop_header-section .infografiapop_close-icon {
+        width: 6%;
+    }
+
+    .infografiapop .infografiapop_btns-box {
+        bottom: 0;
+        width: 6%;
+        max-width: 40px;
+    }
+
+    .infografiapop_btns-box .infografiapop_icon {
+        margin-bottom: 8px;
+    }
+
+    .infografiapop_share-icon .podcastpop_share-icons-box {
+        padding: 5px;
+    }
+}
+
+@media screen and (min-width: 750px) and (min-height: 500px) {
+    .infografiapop .infografiapop_btns-box {
+        bottom: 60px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .infografiapop {
+        position: relative;
+        height: auto;
+        box-shadow: 3px 7px 16px #00122d;
+        animation: fadeInRight 1s;
+    }
+
+    .infografiapop .infografiapop_header-section {
+        padding: 10px 20px 20px 10px;
+    }
+
+    .infografiapop_header-text h4 {
+        font-size: 1.5em;
+    }
+
+    .infografiapop_header-text p {
+        font-size: 1.3em;
+    }
+
+    .infografiapop_header-section .infografiapop_close-icon {
+        width: 4%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .infografiapop .infografiapop_btns-box {
+        max-width: none;
+        width: 4%;
+        right: 2%;
+    }
+
+    .infografiapop .infografiapop_header-section {
+        padding: 20px;
+    }
+
+    .infografiapop_header-text h4 {
+        font-size: 2em;
+    }
+
+    .infografiapop_header-text p {
+        padding: 3px;
+        font-size: 1.6em;
+        width: fit-content;
+    }
+
+    .infografiapop_header-section .infografiapop_close-icon {
+        align-self: flex-start;
+    }
+
+    .infografiapop_share-icon .infografiapop_share-icons-box {
+        width: 220px;
+        padding: 6px 5px;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .infografiapop_header-text h4 {
+        font-size: 2.5em;
+    }
+
+    .infografiapop_header-text p {
+        font-size: 2em;
+    }
+
+    .infografiapop_header-section .infografiapop_close-icon {
+        width: 3%;
+    }
+
+    .infografiapop .infografiapop_btns-box {
+        max-width: none;
+        width: 3%;
+        right: 1%;
+    }
+
+    .infografiapop_share-icon .infografiapop_share-icons-box {
+        width: 240px;
+    }
+
+    .infografiapop_share-icons-box .share-icon {
+        width: 16%;
+    }
+}

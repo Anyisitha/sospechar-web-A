@@ -1,0 +1,8 @@
+.sharedmedia {
+    background-color: #c8d8de;
+    width: 100%;
+    padding: 70px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

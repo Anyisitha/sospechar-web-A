@@ -1,0 +1,146 @@
+.userdatapop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 101;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userdatapop .userdatapop_form {
+    border-radius: 15px;
+    padding: 30px 10px;
+    background-color: #e3e3e3;
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.userdatapop_form .userdatapop_form-icon {
+    width: 25%;
+    margin-top: -25%;
+}
+
+.userdatapop_form input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    background-color: rgba(0, 38, 77, .8);
+    font-size: 0.8em;
+}
+
+input::placeholder {
+    color: #e3e3e3;
+    opacity: .7;
+}
+
+.userdatapop_form .userdatapop_btns-wrapper {
+    margin-top: 20px;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.userdatapop_btns-wrapper .userdatapop_btn {
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-family: Helvetica;
+    font-weight: bold;
+}
+
+.userdatapop_btns-wrapper .userdatapop_save-btn {
+    color: #fff;
+    background-color: #00264d;
+}
+
+.userdatapop_btns-wrapper .userdatapop_cancel-btn {
+    color: #fff;
+    background-color: #6e0505;
+}
+
+@media screen and (min-width: 550px) {
+    .userdatapop .userdatapop_form {
+        width: 50%;
+    }
+
+    .userdatapop_form .userdatapop_form-icon {
+        display: none;
+    }
+
+    .userdatapop_form input {
+        margin: 4px 0;
+        padding: 7px 10px;
+    }
+}
+
+@media screen and (min-width: 750px) and (min-height: 500px) {
+
+    .userdatapop .userdatapop_form {
+        padding: 60px 10px 40px 10px;
+        width: 65%;
+    }
+
+    .userdatapop_form .userdatapop_form-icon {
+        display: block;
+    }
+
+    .userdatapop_form input {
+        margin: 4px 0;
+        padding: 15px;
+        font-size: 1.2em;
+    }
+
+    .userdatapop_btns-wrapper .userdatapop_btn {
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .userdatapop_form .userdatapop_form-icon {
+        width: 20%;
+    }
+
+    .userdatapop .userdatapop_form {
+        padding: 90px 10px 40px 10px;
+    }
+
+    .userdatapop_form input {
+        margin: 10px 0;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .userdatapop .userdatapop_form {
+        padding: 60px 10px 40px 10px;
+        width: 40%;
+    }
+
+    .userdatapop_form input {
+        margin: 10px 0;
+        padding: 12px;
+        font-size: 1.1em;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .userdatapop .userdatapop_form {
+        padding: 60px 10px 40px 10px;
+        width: 30%;
+    }
+
+    .userdatapop_form .userdatapop_form-icon {
+        margin-top: -20%;
+    }
+}

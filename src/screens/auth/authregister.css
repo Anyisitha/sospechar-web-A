@@ -1,0 +1,281 @@
+.authregister {
+    /* border: 1px solid red; */
+    margin: 20px 0 30px 0;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.authregister_text-section {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.authregister_text-section .authregister_text {
+    /* border: 1px solid red; */
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.authregister_text h2 {
+    width: fit-content;
+    padding: 3px 5px;
+    color: #fff;
+    background-color: #990000;
+    font-size: 1.8em;
+    font-family: Helvetica;
+}
+
+.authregister_text p {
+    margin-top: 5px;
+    padding: 8px 5px;
+    background-color: #565b6f;
+    color: #fff;
+    font-size: 0.9em;
+    font-family: Helvetica;
+    text-align: center;
+}
+
+.authregister_text-section p {
+    margin-top: 8px;
+    color: #fff;
+    font-size: 0.9em;
+    font-family: Helvetica;
+    text-align: center;
+}
+
+.authregister_text-section p span {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.authregister_form-section {
+    /* border: 1px solid red; */
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.authregister_form-section .authregister_form-title {
+    border-radius: 20px 20px 0 0;
+    width: 70%;
+    padding: 8px 0;
+    color: #fff;
+    background-color: #00264d;
+    font-family: Helvetica;
+    text-align: center;
+}
+
+.authregister_form-section .authregister_form {
+    position: relative;
+    padding: 20px 0;
+    border-radius: 15px;
+    width: 95%;
+    background-color: #e3e3e3;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.authregister_form .authregiter-inputs-wrapper {
+    /* border: 1px solid red; */
+    width: 80%;
+
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.authregiter-inputs-wrapper input, .authregiter-inputs-wrapper select {
+    width: 100%;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    background-color: rgba(0, 38, 77, .8);
+    font-size: 0.8em;
+}
+
+.authregiter-inputs-wrapper input::placeholder, .authregiter-inputs-wrapper select::placeholder {
+    color: #e3e3e3;
+    opacity: .7;
+}
+
+.authregister_form .authregister_form-text, .authregister_form .authregister_form-footer {
+    margin: 10px 0;
+    color: #00264d;
+    text-align: center;
+    font-size: 0.9em;
+    font-family: Helvetica;
+}
+
+.authregister_form .authregister_form-footer {
+    font-size: 0.7em;
+    padding: 0 10px;
+}
+
+.authregister_form-footer input {
+    margin-right: 5px;
+}
+
+.authregister_form button {
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: -35px;
+    padding: 5px 25px;
+    border-radius: 20px;
+    border: none;
+    color: #00264d;
+    background-color: #fff;
+    font-size: 1.1em;
+    font-family: Helvetica;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 550px) {
+    .authregister {
+        flex-direction: row;
+    }
+
+    .authregister_form-section {
+        margin-top: 0;
+    }
+
+    .authregister_text-section {
+        align-items: flex-start;
+    }
+
+    .authregister_text-section .authregister_text {
+        align-items: flex-start;
+    }
+
+    .authregister_text-section p {
+        text-align: left;
+    }
+
+    .authregister_text-section .authregister_second-p {
+        padding: 0 10px;
+    }
+}
+
+@media screen and (min-width: 550px) and (min-height: 500px) {
+    .authregister_text-section {
+        width: 35%;
+        padding: 0 10px;
+        justify-content: center;
+    }
+
+    .authregister_form-section {
+        width: 65%;
+    }
+
+    .authregister_form-section .authregister_form-title {
+        width: 50%;
+        padding: 12px 0;
+    }
+
+    .authregister_form .authregiter-inputs-wrapper {
+        width: 90%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .authregister_form .authregister_form-text {
+        width: 100%;
+        padding-right: 30px;
+        text-align: right;
+    }
+
+    .authregister_form button {
+        font-size: 1.6em;
+        padding: 8px 35px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .authregister {
+        justify-content: space-between;
+    }
+
+    .authregister_text h2 {
+        font-size: 3em;
+    }
+
+    .authregister_text-section p {
+        font-size: 1.2em;
+    }
+
+    .authregister_form-section {
+        width: 60%;
+    }
+
+    .authregister_form-section .authregister_form-title {
+        width: 40%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .authregister_form-section {
+        padding: 0 30px 0 0;
+        width: 56%;
+    }
+
+    .authregister_text h2 {
+        font-size: 3.5em;
+    }
+
+    .authregister_text-section p {
+        font-size: 1.6em;
+    }
+
+    .authregiter-inputs-wrapper input, .authregiter-inputs-wrapper select {
+        font-size: 1em;
+    }
+
+    .authregister_form .authregister_form-footer {
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .authregister {
+        margin-bottom: 50px;
+    }
+
+    .authregister_text-section {
+        padding: 0 70px;
+    }
+
+    .authregister_text h2 {
+        font-size: 4.5em;
+    }
+
+    .authregister_text-section p {
+        font-size: 2.3em;
+    }
+
+    .authregister_form-section {
+        width: 46%;
+    }
+
+    .authregister_form-section .authregister_form-title {
+        font-size: 1.5em;
+    }
+
+    .authregister_form-section .authregister_form {
+        padding: 30px 0;
+    }
+
+    .authregister_form button {
+        margin-bottom: -50px;
+        padding: 12px 55px;
+    }
+}

@@ -1,7 +1,9 @@
 .carrusel {
-    padding-top: 5px;
+    padding-top: 5%;
     background-color: #c8d8de;
 }
+
+
 
 .carrusel_legend, .carrusel_legend_video {
     background-color: transparent !important;
@@ -147,5 +149,39 @@
 
     .carrusel_legend_video .carrusel_legend-text {
         font-size: 3em;
+    }
+}
+
+@media (min-width: 1200px) {
+    .papper-1 {
+        height: 91vh;
+    }
+}
+
+@media (max-width: 1024px) {
+    .papper-1 {
+        height: 30vh;
+    }
+
+    .slider-wrapper {
+        height: 30vh;
+    }
+
+    .carrusel {
+        padding-top: 14%;
+    }
+}
+
+@media (max-width: 500px) {
+    .carrusel {
+        padding-top: 121px;
+    }
+
+    .papper-1 {
+        height: 25.5vh;
+    }
+
+    .slider-wrapper {
+        height: 25.5vh;
     }
 }

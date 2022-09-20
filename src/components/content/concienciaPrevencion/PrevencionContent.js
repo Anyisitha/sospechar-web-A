@@ -28,19 +28,20 @@ const PrevencionContent = () => {
     const { playingMedia: currentMediaPlaying } = useSelector(state => state.ui);
 
 
-    const handleDisplayMedia = (id, type, title, text1, text2, bc, sectionId, filePath) => {
-        dispatch(playingMedia(id, title, text1, text2, type, bc, sectionId, filePath));
+    const handleDisplayMedia = (id, type, title, text1, text2, bc, sectionId, filePath, code, isSecond) => {
+        dispatch(playingMedia(id, title, text1, text2, type, bc, sectionId, filePath, code, isSecond));
+
     };
 
-    console.log(currentMediaPlaying)
+    
 
     return (
         <div style={{ width: "100%" }}>
-            <div className='prevencion_subsection-wrapper prevencion_subsection-wrapper-1' id="section-concientes">
+            <div className='prevencion_subsection-wrapper prevencion_subsection-wrapper-1' id="section-concientes">  
                 {
-                    currentMediaPlaying && currentMediaPlaying.sectionId == 4 && currentMediaPlaying.mediaType == 2
+                    currentMediaPlaying && currentMediaPlaying.sectionId == 10 && currentMediaPlaying.mediaType == 1
                         ?
-                        <Podcast />
+                        <Infografia />
                         :
                         currentMediaPlaying && currentMediaPlaying.sectionId == 11 && currentMediaPlaying.mediaType == 3
                             ?
@@ -51,11 +52,13 @@ const PrevencionContent = () => {
                                     img={ClasificacionBanner}
                                     title=''
                                     altText='Clasificación de la falla cardíaca'
-                                    color=''
+                                    classNameDiv="w-1-4 desktop__pr-5"
                                 />
 
                                 <div className='diagnostico_subsection-media'>
+
                                     {
+
                                         data.map(media => {
                                             if (media.subsection == 10 && media.section == 7) {
                                                 return (
@@ -66,7 +69,7 @@ const PrevencionContent = () => {
                                                         filePath={media.file_path}
                                                         mediaType={media.title}
                                                         text={media.description.split('-')[0]}
-                                                        text2={media.description.split('-')[1]}
+                                                        text2={media.text2}
                                                         type={media.type}
                                                         id={media.id}
                                                         sectionId={media.subsection}
@@ -78,7 +81,9 @@ const PrevencionContent = () => {
                                                         }
                                                         setDisplayMedia={handleDisplayMedia}
                                                         isAvailable={media.available}
-                                                        customClass='unique-card sections mr-5'
+                                                        customClass='conciencia-double-row-1 unique-card sections'
+                                                        code={media.code}
+                                                        isSecond={media.isSecond}
                                                     />
                                                 )
                                             }
@@ -87,6 +92,7 @@ const PrevencionContent = () => {
                                 </div>
                                 <div className='diagnostico_subsection-media'>
                                     {
+
                                         data.map(media => {
                                             if (media.subsection == 11 && media.section == 8) {
                                                 return (
@@ -97,7 +103,7 @@ const PrevencionContent = () => {
                                                         filePath={media.file_path}
                                                         mediaType={media.title}
                                                         text={media.description.split('-')[0]}
-                                                        text2={media.description.split('-')[1]}
+                                                        text2={media.text2}
                                                         type={media.type}
                                                         id={media.id}
                                                         sectionId={media.subsection}
@@ -109,7 +115,8 @@ const PrevencionContent = () => {
                                                         }
                                                         setDisplayMedia={handleDisplayMedia}
                                                         isAvailable={media.available}
-                                                        customClass=''
+                                                        code={media.code}
+                                                        isSecond={media.isSecond}
                                                     />
                                                 )
                                             }
@@ -136,6 +143,7 @@ const PrevencionContent = () => {
                                     title=''
                                     altText='Criterios de diagnóstico de la falla cardíaca'
                                     color=''
+                                    classNameDiv="banner-69 desktop__pr-5"
                                 />
 
                                 <div className='prevencion_subsection-media'>
@@ -150,7 +158,7 @@ const PrevencionContent = () => {
                                                         filePath={media.file_path}
                                                         mediaType={media.title}
                                                         text={media.description.split('-')[0]}
-                                                        text2={media.description.split('-')[1]}
+                                                        text2={media.text2}
                                                         type={media.type}
                                                         id={media.id}
                                                         sectionId={media.subsection}
@@ -162,7 +170,9 @@ const PrevencionContent = () => {
                                                         }
                                                         setDisplayMedia={handleDisplayMedia}
                                                         isAvailable={media.available}
-                                                        customClass=''
+                                                        customClass='h-full'
+                                                        code={media.code}
+                                                        isSecond={media.isSecond}
                                                     />
                                                 )
                                             }
@@ -172,13 +182,14 @@ const PrevencionContent = () => {
                             </>
                 }
             </div>
+            
 
             <div className='prevencion_subsection-wrapper' id='section-herramientas'>
-                {currentMediaPlaying && currentMediaPlaying.sectionId == 6 && currentMediaPlaying.mediaType == 2
+                {currentMediaPlaying && currentMediaPlaying.sectionId == 15 && currentMediaPlaying.mediaType == 2
                     ?
                     <Podcast />
                     :
-                    currentMediaPlaying && currentMediaPlaying.sectionId == 6 && currentMediaPlaying.mediaType == 1
+                    currentMediaPlaying && currentMediaPlaying.sectionId == 15 && currentMediaPlaying.mediaType == 1
                         ?
                         <Infografia />
                         :
@@ -193,6 +204,7 @@ const PrevencionContent = () => {
                             <div className='diagnostico_subsection-media'>
                                 {
                                     data.map(media => {
+
                                         if (media.subsection == 13 && media.section == 10) {
                                             return (
                                                 <Card
@@ -202,7 +214,7 @@ const PrevencionContent = () => {
                                                     bcImg={media.background}
                                                     mediaType={media.title}
                                                     text={media.description.split('-')[0]}
-                                                    text2={media.description.split('-')[1]}
+                                                    text2={media.text2}
                                                     type={media.type}
                                                     id={media.id}
                                                     sectionId={media.subsection}
@@ -214,7 +226,9 @@ const PrevencionContent = () => {
                                                     }
                                                     setDisplayMedia={handleDisplayMedia}
                                                     isAvailable={media.available}
-                                                    customClass='unique-card sections'
+                                                    customClass='conciencia-row-1 unique-card sections'
+                                                    code={media.code}
+                                                    isSecond={media.isSecond}
                                                 />
                                             )
                                         }
@@ -233,7 +247,7 @@ const PrevencionContent = () => {
                                                     bcImg={media.background}
                                                     mediaType={media.title}
                                                     text={media.description.split('-')[0]}
-                                                    text2={media.description.split('-')[1]}
+                                                    text2={media.text2}
                                                     type={media.type}
                                                     id={media.id}
                                                     sectionId={media.subsection}
@@ -245,7 +259,9 @@ const PrevencionContent = () => {
                                                     }
                                                     setDisplayMedia={handleDisplayMedia}
                                                     isAvailable={media.available}
-                                                    customClass='mr-5 unique-card sections'
+                                                    customClass='conciencia-row-2 unique-card sections'
+                                                    code={media.code}
+                                                    isSecond={media.isSecond}
                                                 />
                                             )
                                         }
@@ -264,7 +280,7 @@ const PrevencionContent = () => {
                                                     bcImg={media.background}
                                                     mediaType={media.title}
                                                     text={media.description.split('-')[0]}
-                                                    text2={media.description.split('-')[1]}
+                                                    text2={media.text2}
                                                     type={media.type}
                                                     id={media.id}
                                                     sectionId={media.subsection}
@@ -276,7 +292,9 @@ const PrevencionContent = () => {
                                                     }
                                                     setDisplayMedia={handleDisplayMedia}
                                                     isAvailable={media.available}
-                                                    customClass='mr-5 unique-card sections'
+                                                    customClass='conciencia-row-3 unique-card sections'
+                                                    code={media.code}
+                                                    isSecond={media.isSecond}
                                                 />
                                             )
                                         }
@@ -288,89 +306,98 @@ const PrevencionContent = () => {
             </div>
             <div className='prevencion_subsection-wrapper prevencion_subsection-wrapper-1' id="section-prevencion">
                 {
-                    currentMediaPlaying && currentMediaPlaying.sectionId == 4 && currentMediaPlaying.mediaType == 2
-                        ?
-                        <Podcast />
-                        :
-                        currentMediaPlaying && currentMediaPlaying.sectionId == 11 && currentMediaPlaying.mediaType == 3
-                            ?
-                            <VideoPopUp />
-                            :
-                            <>
-                                <SubsectionBanner
-                                    img={require("../../../assets/images/fila1.png")}
-                                    title=''
-                                    altText='Clasificación de la falla cardíaca'
-                                    color=''
-                                />
 
-                                <div className='diagnostico_subsection-media'>
-                                    {
-                                        data.map(media => {
-                                            if (media.subsection == 16 && media.section == 13) {
-                                                return (
-                                                    <Card
-                                                        key={media.id}
-                                                        thumbImg={media.thumbnail}
-                                                        bcImg={media.background}
-                                                        filePath={media.file_path}
-                                                        mediaType={media.title}
-                                                        text={media.description.split('-')[0]}
-                                                        text2={media.description.split('-')[1]}
-                                                        type={media.type}
-                                                        id={media.id}
-                                                        sectionId={media.subsection}
-                                                        icon={
-                                                            media.type == 1 ? InfoIcon : media.type == 2 ? AudioIcon : media.type == 3 ? VideoIcon : ''
-                                                        }
-                                                        btn={
-                                                            media.type == 1 ? ViewInfo : media.type == 2 || media.type == 3 ? PlayPodcast : ''
-                                                        }
-                                                        setDisplayMedia={handleDisplayMedia}
-                                                        isAvailable={media.available}
-                                                        customClass='unique-card sections mr-5'
-                                                    />
-                                                )
-                                            }
-                                        })
-                                    }
-                                </div>
-                                <div className='diagnostico_subsection-media'>
-                                    {
-                                        data.map(media => {
-                                            if (media.subsection == 17 && media.section == 14) {
-                                                return (
-                                                    <Card
-                                                        key={media.id}
-                                                        thumbImg={media.thumbnail}
-                                                        bcImg={media.background}
-                                                        filePath={media.file_path}
-                                                        mediaType={media.title}
-                                                        text={media.description.split('-')[0]}
-                                                        text2={media.description.split('-')[1]}
-                                                        type={media.type}
-                                                        id={media.id}
-                                                        sectionId={media.subsection}
-                                                        icon={
-                                                            media.type == 1 ? InfoIcon : media.type == 2 ? AudioIcon : media.type == 3 ? VideoIcon : ''
-                                                        }
-                                                        btn={
-                                                            media.type == 1 ? ViewInfo : media.type == 2 || media.type == 3 ? PlayPodcast : ''
-                                                        }
-                                                        setDisplayMedia={handleDisplayMedia}
-                                                        isAvailable={media.available}
-                                                        customClass='unique-card sections'
-                                                    />
-                                                )
-                                            }
-                                        })
-                                    }
-                                </div>
-                            </>
+                    currentMediaPlaying && (currentMediaPlaying.sectionId == 16 || currentMediaPlaying.sectionId == 17) && currentMediaPlaying.mediaType == 1
+                        ?
+                        <Infografia />
+                        :
+                        currentMediaPlaying && currentMediaPlaying.sectionId == 4 && currentMediaPlaying.mediaType == 2
+                            ?
+                            <Podcast />
+                            :
+                            currentMediaPlaying && currentMediaPlaying.sectionId == 11 && currentMediaPlaying.mediaType == 3
+                                ?
+                                <VideoPopUp />
+                                :
+                                <>
+                                    <SubsectionBanner
+                                        img={require("../../../assets/images/fila1.png")}
+                                        title=''
+                                        altText='Clasificación de la falla cardíaca'
+                                        classNameDiv="w-1-4 desktop__pr-5"
+                                    />
+
+                                    <div className='diagnostico_subsection-media'>  
+                                        {
+                                            data.map(media => {
+                                                if (media.subsection == 16 && media.section == 13) {
+                                                    return (
+                                                        <Card
+                                                            key={media.id}
+                                                            thumbImg={media.thumbnail}
+                                                            bcImg={media.background}
+                                                            filePath={media.file_path}
+                                                            mediaType={media.title}
+                                                            text={media.description.split('-')[0]}
+                                                            text2={media.text2}
+                                                            type={media.type}
+                                                            id={media.id}
+                                                            sectionId={media.subsection}
+                                                            icon={
+                                                                media.type == 1 ? InfoIcon : media.type == 2 ? AudioIcon : media.type == 3 ? VideoIcon : ''
+                                                            }
+                                                            btn={
+                                                                media.type == 1 ? ViewInfo : media.type == 2 || media.type == 3 ? PlayPodcast : ''
+                                                            }
+                                                            setDisplayMedia={handleDisplayMedia}
+                                                            isAvailable={media.available}
+                                                            customClass='conciencia-double-row-2 unique-card sections'
+                                                            code={media.code}
+                                                            isSecond={media.isSecond}
+                                                        />
+                                                    )
+                                                }
+                                            })
+                                        }
+                                    </div>
+                                    <div className='diagnostico_subsection-media'>
+                                        {
+                                            data.map(media => {
+                                                if (media.subsection == 17 && media.section == 14) {
+                                                    return (
+                                                        <Card
+                                                            key={media.id}
+                                                            thumbImg={media.thumbnail}
+                                                            bcImg={media.background}
+                                                            filePath={media.file_path}
+                                                            mediaType={media.title}
+                                                            text={media.description.split('-')[0]}
+                                                            text2={media.text2}
+                                                            type={media.type}
+                                                            id={media.id}
+                                                            sectionId={media.subsection}
+                                                            icon={
+                                                                media.type == 1 ? InfoIcon : media.type == 2 ? AudioIcon : media.type == 3 ? VideoIcon : ''
+                                                            }
+                                                            btn={
+                                                                media.type == 1 ? ViewInfo : media.type == 2 || media.type == 3 ? PlayPodcast : ''
+                                                            }
+                                                            setDisplayMedia={handleDisplayMedia}
+                                                            isAvailable={media.available}
+                                                            customClass='conciencia-double-row-3 unique-card sections' 
+                                                            code={media.code}
+                                                            isSecond={media.isSecond}
+                                                        />
+                                                    )
+                                                }
+                                            })
+                                        }
+                                    </div>
+                                </>
                 }
             </div>
             <div className='prevencion_subsection-wrapper' id='section-herramientas'>
-                {currentMediaPlaying && currentMediaPlaying.sectionId == 6 && currentMediaPlaying.mediaType == 2
+                {currentMediaPlaying && currentMediaPlaying.sectionId == 18 && currentMediaPlaying.mediaType == 2
                     ?
                     <Podcast />
                     :
@@ -398,7 +425,7 @@ const PrevencionContent = () => {
                                                     bcImg={media.background}
                                                     mediaType={media.title}
                                                     text={media.description.split('-')[0]}
-                                                    text2={media.description.split('-')[1]}
+                                                    text2={media.text2}
                                                     type={media.type}
                                                     id={media.id}
                                                     sectionId={media.subsection}
@@ -410,7 +437,9 @@ const PrevencionContent = () => {
                                                     }
                                                     setDisplayMedia={handleDisplayMedia}
                                                     isAvailable={media.available}
-                                                    customClass='mr-5 unique-card sections'
+                                                    customClass='desktop__pr-5 unique-card sections'
+                                                    code={media.code}
+                                                    isSecond={media.isSecond}
                                                 />
                                             )
                                         }
@@ -429,7 +458,7 @@ const PrevencionContent = () => {
                                                     bcImg={media.background}
                                                     mediaType={media.title}
                                                     text={media.description.split('-')[0]}
-                                                    text2={media.description.split('-')[1]}
+                                                    text2={media.text2}
                                                     type={media.type}
                                                     id={media.id}
                                                     sectionId={media.subsection}
@@ -441,7 +470,9 @@ const PrevencionContent = () => {
                                                     }
                                                     setDisplayMedia={handleDisplayMedia}
                                                     isAvailable={media.available}
-                                                    customClass='mr-5 unique-card sections'
+                                                    customClass='desktop__pr-5 unique-card sections'
+                                                    code={media.code}
+                                                    isSecond={media.isSecond}
                                                 />
                                             )
                                         }
@@ -460,7 +491,7 @@ const PrevencionContent = () => {
                                                     bcImg={media.background}
                                                     mediaType={media.title}
                                                     text={media.description.split('-')[0]}
-                                                    text2={media.description.split('-')[1]}
+                                                    text2={media.text2}
                                                     type={media.type}
                                                     id={media.id}
                                                     sectionId={media.subsection}
@@ -472,7 +503,9 @@ const PrevencionContent = () => {
                                                     }
                                                     setDisplayMedia={handleDisplayMedia}
                                                     isAvailable={media.available}
-                                                    customClass='mr-5 unique-card sections'
+                                                    customClass='unique-card sections'
+                                                    code={media.code}
+                                                    isSecond={media.isSecond}
                                                 />
                                             )
                                         }

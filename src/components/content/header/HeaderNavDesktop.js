@@ -1,42 +1,30 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { showUserPop } from '../../../actions/ui';
 
 import Logo from '../../../assets/images/sospechar-no-falla_logo.png';
-import UserIcon from '../../../assets/images/icono-perfil.png';
-import HiIcon from '../../../assets/images/hi-icon.png';
-import UpdateIcon from '../../../assets/images/update-icon.png';
-import StarIcon from '../../../assets/images/star-icon.png';
-import LogOutIcon from '../../../assets/images//logOut-icon.png';
 
 import './headerdesktop.css';
-import { logOut } from '../../../actions/auth';
 
 import $ from 'jquery';
 
 const HeaderNavDesktop = ({ location }) => {
 
-    const dispatch = useDispatch();
     const history = useHistory();
 
-    const [showOptions, setShowOptions] = useState(false);
-    const { data } = useSelector(state => state.auth);
-
-    const handleLogOut = () => {
-        dispatch(logOut());
-    };
+    /** States */
+    const [beforeHover, setBeforeHover] = useState("");
 
     const handleScroll = (section) => {
         if (
             location.pathname.includes('diagnostico') ||
             location.pathname.includes('seguimiento') ||
-            location.pathname.includes('compartido') ||
+            location.pathname.includes('compartido') ||  
             location.pathname.includes('favoritos') ||
             location.pathname.includes('terminos-y-condiciones') ||
             location.pathname.includes('politicas-de-cookies') ||
-            location.pathname.includes('privacidad-de-datos')
-        ) history.push('/contenido-para-profesionales');
+            location.pathname.includes('privacidad-de-datos') ||
+            location.pathname.includes('conciencia')
+        ) return history.push('/contenido-para-profesionales');
 
         if (section === 'inicio') {
             setTimeout(() => {
@@ -53,33 +41,74 @@ const HeaderNavDesktop = ({ location }) => {
         }
     }
 
+    const addHover = (label) => {
+        let before = document.getElementById(beforeHover);
+        if(before){
+            before.classList.remove("contentheaderdesktop_active-item")
+        }
+
+        let newHover = document.getElementById(label);
+
+        newHover.classList.add("contentheaderdesktop_active-item");
+
+        setBeforeHover(label);
+    }
+
+    useEffect(() => {
+      let location = window.location.pathname;
+      if(location.includes('/diagnostico')){
+        document.getElementById('inicio').classList.remove("contentheaderdesktop_active-item")
+        document.getElementById('diagnostico').classList.add("contentheaderdesktop_active-item")
+      } else if(location.includes('/seguimiento')){
+        document.getElementById('inicio').classList.remove("contentheaderdesktop_active-item")
+        document.getElementById('seguimiento').classList.add("contentheaderdesktop_active-item")
+      } else if(location.includes('/conciencia')){
+        document.getElementById('inicio').classList.remove("contentheaderdesktop_active-item")
+        document.getElementById('conciencia').classList.add("contentheaderdesktop_active-item")
+      }
+    }, [])
+    
+
     return (
         <div className='contentheaderdesktop'>
             <div className='contetnheader_logo-section'>
                 <div className='contentheaderdesktop_logo-wrapper'>
-                    <img src={Logo} alt='sospechar no falla - logo' />
+                    <a href='https://sospecharnofalla.com/bienvenido-sospechar-no-falla'>
+                        <img src={Logo} alt='sospechar no falla - logo' />
+                    </a>
                 </div>
                 <h4>Contenido para todos</h4>
             </div>
             <div className='contentheaderdesktop_nav-wrapper'>
                 <ul>
-                    <li className='contentheaderdesktop_active-item' onClick={() => handleScroll('inicio')}>
+                    <li 
+                        id="inicio" 
+                        className='contentheaderdesktop_active-item' 
+                        onClick={() => handleScroll('inicio')}
+                        onMouseOver={() => addHover("inicio")}
+                    >
                         <span>Inicio</span>
                     </li>
-                    <li>
+                    <li 
+                        id="generalidades"
+                        onMouseOver={() => addHover("generalidades")}
+                    >
                         <span>Generalidades</span>
 
                         <div className='contentheaderdesktop_subsection'>
                             <div onClick={() => handleScroll(1)}>
-                                ¿Que es <br />la falla cardíaca?
+                            ¿Qué es <br />la falla cardíaca?
                             </div>
                             <div onClick={() => handleScroll(2)}>
-                                Datos curiosos <br />sobre la falla cardíaca
+                                Datos<br />sobre la falla cardíaca
                             </div>
                         </div>
                     </li>
-                    <li>
-                        <span onClick={() => handleScroll(3)}>Síntomas <br /> y signos</span>
+                    <li
+                        id="sintomas"
+                        onMouseOver={() => addHover("sintomas")}
+                    >
+                        <span onClick={() => handleScroll(3)}>Signos <br /> y síntomas</span>
 
                         <div className='contentheaderdesktop_subsection'>
                             {/* <div onClick={() => handleScroll(3)}>
@@ -87,45 +116,71 @@ const HeaderNavDesktop = ({ location }) => {
                             </div> */}
                         </div>
                     </li>
-                    <li>
+                    <li
+                        id="diagnostico"
+                        onMouseOver={() => addHover("diagnostico")}
+                    >
                         <span>Diagnóstico</span>
 
                         <div className='contentheaderdesktop_subsection'>
-                            <div onClick={() => handleScroll(4)}>
-                                ¿Cómo se clasifica <br /> la falla cardíaca?
+                            <div>
+                                <a href='/contenido-para-todos/diagnostico#section-clasificacion'>
+                                    ¿Cómo se clasifica <br /> la falla cardíaca?
+                                </a>
                             </div>
-                            <div onClick={() => handleScroll(4)}>
-                                ¿Cuáles son los criterios<br /> de diagnóstico <br />  de la falla cardíaca?
+                            <div>
+                                <a href='/contenido-para-todos/diagnostico#section-criterios'>
+                                ¿Cómo se diagnostica<br /> la falla cardíaca?
+                                </a>
                             </div>
-                            <div onClick={() => handleScroll(4)}>
-                                ¿Qué herramientas<br />diagnósticas son útiles <br /> para detectar la falla cardíaca?
+                            <div>
+                                <a href='/contenido-para-todos/diagnostico#section-herramientas'>
+                                    ¿Herramientas<br />de detección de la falla cardíaca?
+                                </a>
                             </div>
                         </div>
                     </li>
-                    <li>
+                    <li
+                        id="seguimiento"
+                        onMouseOver={() => addHover("seguimiento")}
+                    >
                         <span>Seguimiento</span>
 
                         <div className='contentheaderdesktop_subsection'>
-                            <div onClick={() => handleScroll(5)}>
-                                Para paciente
+                            <div>
+                                <a href='/contenido-para-todos/seguimiento#section-pacientes'>
+                                    Para paciente
+                                </a>
                             </div>
-                            <div onClick={() => handleScroll(5)}>
-                                Para familiares <br /> y cuidadores
+                            <div>
+                                <a href='/contenido-para-todos/seguimiento#section-cuidadores'>
+                                    Para familiares <br /> y cuidadores
+                                </a>
                             </div>
+
                         </div>
                     </li>
-                    <li>
+                    <li
+                        id="conciencia"
+                        onMouseOver={() => addHover("conciencia")}
+                    >
                         <span>Conciencia <br /> y prevención</span>
 
                         <div className='contentheaderdesktop_subsection'>
-                            <div onClick={() => handleScroll(6)}>
-                                Otras enfermedades<br />comunes en el paciente<br />con la falla cardíaca
+                            <div>
+                                <a href='/contenido-para-todos/conciencia#section-concientes'>
+                                    Enfermedades<br />relacionadas con la falla cardíaca
+                                </a>
                             </div>
-                            <div onClick={() => handleScroll(6)}>
-                                Prevención de <br /> la falla cardíaca
+                            <div>
+                                <a href='/contenido-para-todos/conciencia#section-others'>
+                                    Prevención de <br /> la falla cardíaca
+                                </a>
                             </div>
-                            <div onClick={() => handleScroll(6)}>
-                               Seamos conscientes
+                            <div>
+                                <a href='/contenido-para-todos/conciencia#section-prevencion'>
+                                    Seamos conscientes
+                                </a>
                             </div>
                         </div>
                     </li>

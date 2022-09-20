@@ -55,7 +55,7 @@
     }
 }
 
-@media screen and (min-width: 840px) and (max-height: 425px) {
+@media screen and (max-width: 840px) and (min-width: 425px) {
     .signossintomas_subsection-wrapper .subsection-title {
         width: 100%;
     }
@@ -80,7 +80,7 @@
     }
 }
 
-@media screen and (min-width: 750px) and (min-height: 500px) {
+@media screen and (max-width: 750px) and (min-width: 500px) {
     .signossintomas_subsection-wrapper .signossintomas_subsection-media {
         margin-top: 10px;
         width: 100%;
@@ -149,7 +149,6 @@
 
     .signossintomas_subsection-wrapper .signossintomas_subsection-media {
         margin-top: 0;
-        margin-left: 10px;
         width: 49%;
         flex-direction: column;
     }
@@ -188,7 +187,13 @@
     }
 
     .signossintomas_subsection-wrapper .signossintomas_subsection-media .card-text {
-        top: 71%;
+        top: 70%;
         font-size: 1.19em;
+    }
+}
+
+@media (min-width: 1200px) {
+    .width-94 {
+        width: 94vw;
     }
 }

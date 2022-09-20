@@ -33,7 +33,7 @@ const Conciencia = () => {
             <h2>CONCIENCIA Y PREVENCIÓN</h2>
 
             <div className='conciencia_main-wrapper'>
-                <div className='conciencia_subsection-wrapper'>
+                <div className='conciencia_subsection-wrapper'> 
                     {
                         currentMediaPlaying && currentMediaPlaying.sectionId == 7 && currentMediaPlaying.mediaType == 1
                             ?

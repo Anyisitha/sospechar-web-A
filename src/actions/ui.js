@@ -23,7 +23,7 @@ export const removeSuccessMessage = () => ({
     type: types.uiRemoveSuccessMessage
 });
 
-export const playingMedia = (mediaId, mediaTitle, mediaText1, mediaText2, mediaType, mediaBc, sectionId, filePath) => ({
+export const playingMedia = (mediaId, mediaTitle, mediaText1, mediaText2, mediaType, mediaBc, sectionId, filePath, code, isSecond, info) => ({
     type: types.uiPlayingMedia,
     payload: {
         mediaId,
@@ -33,7 +33,8 @@ export const playingMedia = (mediaId, mediaTitle, mediaText1, mediaText2, mediaT
         mediaText2, 
         mediaBc,
         mediaType,
-        filePath
+        filePath,
+        code, isSecond, info
     }
 });
 

@@ -2,9 +2,9 @@ import React from 'react';
 
 import './subsectionbanner.css';
 
-const SubsectionBanner = ({ img, title, altText, color, style, isSectionFull }) => {
+const SubsectionBanner = ({ img, title, altText, color, style, isSectionFull, classNameDiv }) => {
     return (
-        <div className='subsection-title relative mr-5' style={style}>
+        <div className={`${classNameDiv} subsection-title relative`}>
             <img src={img} alt={ altText } style={!isSectionFull ? style : { width: "100%" }} />
 
             <h3 style={{backgroundColor: color}}>

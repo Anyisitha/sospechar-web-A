@@ -29,18 +29,16 @@ const Footer = ({ location }) => {
                         <h5>
                             Aviso legal
                         </h5>
-                        {
-                            changeLegalText
-                                ?
+                        
+                                
                                 <p className="legal-text">
-                                    Material dirigido al profesional de la salud. Lo invitamos a disfrutar del contenido a continuación teniendo en cuenta que está sujeto a derechos de propiedad intelectual. Este material podría contener conceptos u opiniones que son responsabilidad de los autores y no comprometen las opiniones del laboratorio auspiciante.
-                                    Boehringer Ingelheim S.A. Teléfono: (+57 1) 319 91 00, e-mail: medfora.co@boehringer-ingelheim.com Dirección: Carrera 11 No. 84A-09 Piso 5, Bogotá D.C. Colombia. PC-CO-102644.
+                                    Lo invitamos a disfrutar del contenido a continuación teniendo en cuenta que está sujeto a derechos de propiedad intelectual. Este material podría contener conceptos u opiniones que son responsabilidad de los autores y no comprometen las opiniones del laboratorio auspiciante. 
                                 </p>
-                                :
+                                <br/>
                                 <p className="legal-text">
-                                    Lo invitamos a disfrutar del contenido a continuación teniendo en cuenta que está sujeto a derechos de propiedad intelectual. Este material podría contener conceptos u opiniones que son responsabilidad de los autores y no comprometen las opiniones del laboratorio auspiciante. Boehringer Ingelheim S.A. Teléfono: (+57 1) 319 91 00, e-mail: medfora.co@boehringer-ingelheim.com Dirección: Carrera 11 No. 84A-09 Piso 5, Bogotá D.C. Colombia. PC-CO-102644.
+                                    La información contenida en este material no pretende reemplazar el consejo médico profesional, consulte siempre a su médico si tiene preguntas y/o preocupaciones acerca de su condición médica. Material educativo exclusivamente para pacientes/público general. PC-CO-102951.
                                 </p>
-                        }
+                        
                     </div>
                     <div>
                         <h5>
@@ -55,17 +53,15 @@ const Footer = ({ location }) => {
                         </p>
                     </div>
                     <div>
-                        {/* <h5>
-                            <Link to="/terminos-y-condiciones">Declaración de accesibilidad</Link>
-                        </h5> */}
+                        
                         <h5>
-                            <Link to='/terminos-y-condiciones'>Términos y condiciones</Link>
+                            <a href='https://sospecharnofalla.com/terminos-y-condiciones' target='_blank'>Términos y condiciones</a>
                         </h5>
                         <h5>
-                            <Link to='/politicas-de-cookies'>Política de cookies</Link>
+                            <a href='https://sospecharnofalla.com/politicas-de-cookies' target='_blank'>Política de cookies</a>
                         </h5>
                         <h5>
-                            <Link to='/privacidad-de-datos'>Privacidad de datos</Link>
+                            <a href='https://sospecharnofalla.com/privacidad-de-datos' target='_blank'>Privacidad de datos</a>
                         </h5>
                     </div>
                 </div>
@@ -80,14 +76,16 @@ const Footer = ({ location }) => {
                     </div>
                     <div className="middle-wrapper">
                         <p>
-                            © 2010-2022 Boehringer Ingelheim GmbH Todos los derechos Reservados
+                        © 2010-2022 <br />
+                        Boehringer Ingelheim GmbH <br />
+                        Todos los derechos reservados
                         </p>
                     </div>
                     <div className="right-wrapper">
-                        <a href='https://www.facebook.com/sospecharnofalla'>
+                        <a href='https://www.facebook.com/sospecharnofalla' target='_blank'>
                             <img src={require("../../assets/images/icon-facebook.png")} width="50"/>
                         </a>
-                        <a href='https://www.instagram.com/sospechar_nofalla/'>
+                        <a href='https://www.instagram.com/sospechar_nofalla/' target='_blank'>
                             <img src={require("../../assets/images/icon-instagram.png")} width="50" />
                         </a>
                     </div>

@@ -13,7 +13,7 @@ const ConcienciaPrevencion = ({ location }) => {
             <div className='prevencion_main-wrapper'>
 
                 {
-                    location.pathname.includes('diagnostico')
+                    location.pathname.includes('/conciencia')
                         ?
                         <PrevencionContent />
                         :
@@ -26,10 +26,10 @@ const ConcienciaPrevencion = ({ location }) => {
 
                 }
             </div>
-            <h2>CONCIENCIA Y PREVENCION</h2>
-            <div class="prevencion_main-wrapper">
+            {/* <h2>CONCIENCIA Y PREVENCION</h2> */}
+            {/* <div class="prevencion_main-wrapper">
                 <PrevencionContent/>
-            </div>
+            </div> */}
         </div>
     );
 }

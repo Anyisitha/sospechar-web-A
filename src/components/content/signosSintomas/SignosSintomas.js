@@ -14,6 +14,7 @@ import ViewInfo from '../../../assets/images/infografia-btn.png';
 
 import './signossintomas.css';
 import VideoPopUp from '../popups/videos/VideoPopUp';
+import Infografia from '../popups/infografias/Infografia';
 
 const SignosSintomas = () => {
 
@@ -36,8 +37,14 @@ const SignosSintomas = () => {
 
             <div className='signossintomas_main-wrapper'>
                 <div className='signossintomas_subsection-wrapper'>
+            {console.log(currentMediaPlaying, "hola ver")}
+
 
                     {
+                        currentMediaPlaying && currentMediaPlaying.sectionId == 16 && currentMediaPlaying.mediaType == 1
+                        ?
+                        <Infografia />
+                        :
                         currentMediaPlaying && mediaIdPlaying == currentMediaPlaying.mediaId && currentMediaPlaying.mediaType == 3
                             ?
                             <VideoPopUp setmediaIdPlaying={setmediaIdPlaying} />
@@ -48,6 +55,7 @@ const SignosSintomas = () => {
                                     title=''
                                     altText='Síntomas y signos de la falla cardíaca'
                                     color=''
+                                    classNameDiv="desktop__pr-5 width-94"
                                 />
 
                                 <div className='signossintomas_subsection-media'>

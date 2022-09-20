@@ -8,6 +8,8 @@ export const startMediaFetching = () => {
             const token = localStorage.getItem('X-token') || '';
             const media = await fecthProfessionalMedia(token);
 
+            console.log(media, "action")
+
             dispatch(finishMediaFetching(media));
 
         } catch (error) {

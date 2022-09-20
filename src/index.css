@@ -70,3 +70,47 @@ img {
         font-size: 1.1em;
     }
 }
+
+.slider-wrapper {
+    height: 91vh;
+}
+
+/* @media (max-width: 1024px) {
+    .slider-wrapper {
+        height: 21vh !important;
+    }
+} */
+
+@media (min-width: 1200px) {
+    .desktop__pr-5 {
+        padding-right: 10px;
+    }
+
+    .desktop__pt-5 {
+        padding-top: 10px;
+    }
+
+    .desktop__pb-5 {
+        padding-bottom: 10px;
+    }
+
+    .banner-70 {
+        width: 69%;
+    }
+
+    .banner-69 {
+        width: 68%;
+    }
+
+    .w-100 {
+        width: 100% !important;
+    }
+
+    .w-1-4 {
+        width: 32.5vw;
+    }
+
+    .h-full {
+        height: 100%;
+    }
+}

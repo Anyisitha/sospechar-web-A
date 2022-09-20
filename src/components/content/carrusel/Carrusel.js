@@ -4,13 +4,15 @@ import { Carousel } from 'react-responsive-carousel';
 
 import PlayBtn from '../../../assets/images/play-video.png';
 import BannerRazones from '../../../assets/images/razones-para-sospechar-banner.png';
+import BannerRazones1 from '../../../assets/images/test-prueba-banner.jpg';
 import BannerNuevoContenido from '../../../assets/images//nuevo-contenido-banner.png';
 import VideoBanner from '../../../assets/videos/video.mp4';
 
 import './carrusel.css';
 
 const Carrusel = () => {
-
+    
+    const history = () => window.open("https://app-test.sospecharnofalla.com/", "_blank")
     const videoRef = useRef();
     const btnRef = useRef();
 
@@ -27,12 +29,18 @@ const Carrusel = () => {
             showArrows={false}
             showStatus={false}
             autoPlay={true}
-            interval={5000}
+            // interval={5000}
             infiniteLoop={true}
             onChange={() => videoRef.current.pause()}
+            onClickItem={(e) => {
+                if(e === 1) return history()
+            }}
         >
             <div>
-                <img src={BannerRazones} alt='razones para sospechar' />
+                <img className='papper-1'  src={BannerRazones} alt='razones para sospechar' />
+            </div>
+            <div>
+                <img className='papper-1'  src={BannerRazones1} alt='razones para sospechar'  />
             </div>
             <div>
                 <video
@@ -45,7 +53,8 @@ const Carrusel = () => {
                 <p className="legend carrusel_legend_video">
                     <span className='carrusel_lengend-title'>VIDEO</span> <br />
                     <span className='carrusel_legend-text'>
-                        Bienvenida
+                        Bienvenido: nuestros detectives te estaban esperando <br />para mostrarte las pistas que han recopilado 
+                        hasta el momento.
                     </span>
                 </p>
 

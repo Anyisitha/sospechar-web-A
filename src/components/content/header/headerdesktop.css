@@ -3,9 +3,11 @@
     color: #fff;
     background-color: #6594be;
     font-family: Helvetica;
-
     display: flex;
     justify-content: space-evenly;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
 }
 
 .contentheaderdesktop .contetnheader_logo-section {
@@ -95,6 +97,11 @@ ul li .contentheaderdesktop_subsection {
     color: #284251;
 }
 
+.contentheaderdesktop_subsection div a {
+    color: #fff;
+    text-decoration: none;
+}
+
 .contentheaderdesktop .contentheaderdesktop_nav-wrapper .contentheaderdesktop_active-item {
     border-bottom: 3px solid #f3d9b5;
 }
@@ -170,11 +177,12 @@ ul li .contentheaderdesktop_subsection {
 @media screen and (min-width: 1200px) {
     .contentheaderdesktop {
         justify-content: space-between;
+        height: 12vh;
     }
 
     .contentheaderdesktop .contetnheader_logo-section {
         width: 35%;
-        padding: 30px 0;
+        padding: 0px 0;
         flex-direction: row;
     }
 
@@ -192,7 +200,7 @@ ul li .contentheaderdesktop_subsection {
     }
 
     .contentheaderdesktop .contentheaderdesktop_nav-wrapper ul li span {
-        padding: 30px 0 15px 0;
+        padding: 16px 0 15px 0;
         font-size: 1em;
     }
 

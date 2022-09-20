@@ -5,8 +5,9 @@
     flex-direction: column;
 }
 
+
 .diagnostico h2 {
-    color: #fff;
+    color: #51758b;
     padding: 10px 10px 0 10px;
     font-size: 1em;
     font-family: Helvetica;
@@ -139,5 +140,19 @@
     
     .sections .card-title {
         top: 38%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .diagnostico-double-row-1:last-child {
+        padding-top: 10px;
+    }
+
+    .diagnostico-double-row-2:last-child {
+        padding-top: 10px;
+    }
+
+    .diagnostico-double-row-3:last-child {
+        padding-top: 10px;
     }
 }

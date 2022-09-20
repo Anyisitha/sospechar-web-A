@@ -24,7 +24,7 @@ const DiagnosticoCards = () => {
 
     return (
         <>
-            <div className='diagnostico_card relative'>
+            <div onClick={() => handleScroll('clasificacion')} className='diagnostico_card relative'>
                 <a href='/contenido-para-todos/diagnostico#section-clasificacion'>
                     <img src={Calsificacion} alt='' />
 

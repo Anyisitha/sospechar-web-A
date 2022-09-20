@@ -61,9 +61,12 @@ const HeaderNavMobile = ({ location }) => {
             <div className='contentheadermobile'>
                 <div className='contetnheader_logo-section'>
                     <div className='contentheadermobile_logo-wrapper'>
-                        <img src={Logo} alt='sospechar no falla - logo' />
+                        <a href='https://sospecharnofalla.com/bienvenido-sospechar-no-falla'>
+                            <img src={Logo} alt='sospechar no falla - logo' />
+
+                        </a>
                     </div>
-                    <h4>Profesionales de la salud</h4>
+                    <h4>Contenido para todos</h4>
                 </div>
                 {/* <div className='contentheadermobile_right-section'>
                     <div className={showOptions ? 'contentheadermobile_profile-pic triangleMobile' : 'contentheadermobile_profile-pic'}>
@@ -121,19 +124,19 @@ const HeaderNavMobile = ({ location }) => {
                     <li className='contenthedermobile_active-item' onClick={() => handleScroll('inicio')}>
                         <span>Inicio</span>
                     </li>
-                    <li onClick={() => handleScroll(1)}>
+                    <li onClick={() => handleScroll(1, 'generalidades')}>
                         <span>Generalidades</span>
                     </li>
-                    <li onClick={() => handleScroll(3)}>
+                    <li onClick={() => handleScroll(3, 'signos-y-sintomas')}>
                         <span>Síntomas <br /> y signos</span>
                     </li>
-                    <li onClick={() => handleScroll(4)}>
+                    <li onClick={() => handleScroll(4, 'diagnostico-menu')}>
                         <span>Diagnóstico</span>
                     </li>
-                    <li onClick={() => handleScroll(5)}>
+                    <li onClick={() => handleScroll(5, '')}>
                         <span>Seguimiento</span>
                     </li>
-                    <li onClick={() => handleScroll(6)}>
+                    <li onClick={() => handleScroll(6, 'conciencia-y-prevencion')}>
                         <span>Conciencia <br /> y prevención</span>
                     </li>
                 </ul>
@@ -143,3 +146,4 @@ const HeaderNavMobile = ({ location }) => {
 }
 
 export default HeaderNavMobile;
+

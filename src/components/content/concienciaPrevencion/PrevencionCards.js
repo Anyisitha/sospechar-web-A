@@ -1,7 +1,5 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-
-import PlusIcon from '../../../assets/images/plus-icon.png';
 import Calsificacion from '../../../assets/images/PREVE.png';
 import Criterios from '../../../assets/images/PREVE1.png';
 import Criterios1 from '../../../assets/images/PREVE2.png';
@@ -25,7 +23,7 @@ const PrevencionCards = () => {
     return (
         <>
             <div className='diagnostico_card relative'>
-                <a href='/contenido-para-todos#section-concientes'>
+                <a href='/contenido-para-todos/conciencia'>
                     <img src={Calsificacion} alt='' />
 
                     {/* <h3>
@@ -43,7 +41,7 @@ const PrevencionCards = () => {
             </div>
 
             <div className='diagnostico_card relative'>
-                <a href="/contenido-para-todos#section-others">
+                <a href="/contenido-para-todos/conciencia#section-others">
                     <img src={Criterios} alt='' />
 
                     {/* <h3>
@@ -61,7 +59,7 @@ const PrevencionCards = () => {
 
             </div>
             <div className='diagnostico_card relative'>
-                <a href="/contenido-para-todos#section-prevencion">
+                <a href="/contenido-para-todos/conciencia#section-prevencion">
                     <img src={Criterios1} alt='' />
 
                     {/* <h3>

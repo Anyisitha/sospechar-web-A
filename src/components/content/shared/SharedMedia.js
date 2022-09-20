@@ -23,8 +23,11 @@ const SharedMedia = ({ location }) => {
         localStorage.setItem('hash', window.location.pathname.split('/')[3]);
         const hash = localStorage.getItem('hash');
 
+        
+
         data.map(item => {
-            if (parseInt(hash) == item.id) {
+            if (hash == item.id) {
+                console.log(item);
                 dispatch(playingMedia(item.id, item.title, item.description.split('-')[0], item.description.split('-')[1], item.type, item.background, item.subsection, item.file_path));
             }
         });

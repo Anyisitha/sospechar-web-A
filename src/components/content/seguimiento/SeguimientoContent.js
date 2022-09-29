@@ -180,7 +180,7 @@ const SeguimientoContent = () => {
               principalBanner={
                 width > 1024
                   ? HerramientasBanner
-                  : "/static/media/test-prueba-banner.57a495f4d375b12baeb3.jpg"
+                  : HerramientasBanner
               }
               numberSections={3}
               mediaArray={data}

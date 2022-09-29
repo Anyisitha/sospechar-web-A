@@ -23,6 +23,10 @@ export const StyledContentFirstSection = styled.div`
     .card {
       width: 100%;
       height: 290px;
+
+      @media(max-width: 1300px) {
+        height: 200px !important;
+      }
     }
   }
 
@@ -43,7 +47,7 @@ export const StyledContentFirstSection = styled.div`
 
       .card:first-child {
         width: 100%;
-        height: 290px;
+        height: 200px;
       }
 
       .card {

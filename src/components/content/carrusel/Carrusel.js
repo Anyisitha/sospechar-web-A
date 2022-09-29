@@ -5,6 +5,7 @@ import { Carousel } from 'react-responsive-carousel';
 import PlayBtn from '../../../assets/images/play-video.png';
 import BannerRazones from '../../../assets/images/razones-para-sospechar-banner.png';
 import BannerRazones1 from '../../../assets/images/test-prueba-banner.jpg';
+import BannerRazones2 from '../../../assets/images/Banners-info.jpg';
 import BannerNuevoContenido from '../../../assets/images//nuevo-contenido-banner.png';
 import VideoBanner from '../../../assets/videos/video.mp4';
 
@@ -41,6 +42,9 @@ const Carrusel = () => {
             </div>
             <div>
                 <img className='papper-1'  src={BannerRazones1} alt='razones para sospechar'  />
+            </div>
+            <div>
+                <img className='papper-1'  src={BannerRazones2} alt='razones para sospechar'  />
             </div>
             <div>
                 <video

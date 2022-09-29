@@ -26,14 +26,18 @@ export const StyledSecondSection = styled.div`
       ? "width: 75%;"
       : "width: 33%;"}
 
-      .card {
-          width: 610px;
-          height: 302px;
-      }
+  .card {
+    width: 610px;
+    height: 302px;
+
+    @media (max-width: 1300px) {
+      height: 200px !important;
+    }
+  }
 `;
 
 export const StyledImage = styled.img.attrs({
   className: "section-image",
 })`
-    width: 100%
+  width: 100%;
 `;
